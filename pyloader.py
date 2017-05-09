@@ -1,31 +1,30 @@
 #!/usr/bin/env python
 
-__author__ = "Aman <aman@amandavinci.me"
-__version__ = "$Revision: 0.0.1 $"
-__date__ = "$Date: 09/05/2017 $"
-
-"""
-Recipe for downloading a sequence of files over http
+"""Quick & easy recipe for downloading a file or a sequence of files
 
 USAGE: $/.pyloader.py [url] [start] [end] [path/to/downloaded/file]
 """
+
+__author__ = "Aman <aman@amandavinci.me>"
+__version__ = "Revision: 0.0.1"
+__date__ = "Date: 09/05/2017"
+
 import os
 import sys		
 import urllib.request, urllib.parse, urllib.error
 
 def download(url, start, end, filepath):
-	'''
-	File Downloader
+	"""File Downloader
 
-	Args
-		url
-		start
-		end
-		filepath
+	Args:
+		url: url to download from
+		start: index to start download from
+		end: index to stop download at
+		filepath: name of the downloaded file
 
-	Returns
-		True if succesfull 
-	'''
+	Returns:
+		True if succesful 
+	"""
 	for i in range(start, end+1):
 		currFile = filepath.format(i)
 		print("Downloading " + currFile + "...")
