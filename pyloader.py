@@ -27,14 +27,19 @@ def download(url, start, end, filepath):
 		True if succesfull 
 	'''
 	for i in range(start, end+1):
-		print("Downloading file#{}...".format(i))
-		urllib.request.urlretrieve(url.format(i), filepath.format(i))
+		currFile = filepath.format(i)
+		print("Downloading " + currFile + "...")
+		urllib.request.urlretrieve(url.format(i), currFile)
+		print("SUCCESS: Downloaded " + currFile + "\n")
+
 
 
 if __name__ == '__main__':
 	if len(sys.argv) == 5:
 		try:
+			print("Attempting to start download...\n")
 			download(sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), sys.argv[4])
+			print("Completed succesfully!")
 		except IOError:
 			print("ERROR: Download Failed...")
 	else:
