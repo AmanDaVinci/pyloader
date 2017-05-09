@@ -7,7 +7,7 @@ __date__ = "$Date: 09/05/2017 $"
 """
 Recipe for downloading a sequence of files over http
 
-Usage: /.pyloader.py [url] [start] [end] [filepath] 
+USAGE: $/.pyloader.py [url] [start] [end] [path/to/downloaded/file]
 """
 import os
 import sys		
@@ -38,4 +38,4 @@ if __name__ == '__main__':
 		except IOError:
 			print("ERROR: Download Failed...")
 	else:
-		print("Usage: /.pyloader.py [url] [start] [end] [filepath]")
+		print("USAGE: $/.pyloader.py [url] [start] [end] [path/to/downloaded/file]")
